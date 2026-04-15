@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business English Hangman</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="header-icon">
+        <svg viewBox="0 0 40 40" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="14" width="32" height="22" rx="3" fill="white" fill-opacity="0.25"/>
+          <rect x="13" y="8" width="14" height="8" rx="2" stroke="white" stroke-width="2.5"/>
+          <line x1="4" y1="24" x2="36" y2="24" stroke="white" stroke-width="2.5"/>
+          <line x1="20" y1="24" x2="20" y2="36" stroke="white" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h1>Business English Hangman</h1>
+        <p class="subtitle">Learn words for the workplace!</p>
+      </div>
+      <div class="score-board">
+        <div class="score-item">
+          <span class="score-num" id="score-win">0</span>
+          <span class="score-label">Wins</span>
+        </div>
+        <div class="score-divider"></div>
+        <div class="score-item">
+          <span class="score-num" id="score-lose">0</span>
+          <span class="score-label">Losses</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Game area -->
+      <div class="game-area">
+
+        <!-- Hangman drawing -->
+        <div class="hangman-section">
+          <svg id="hangman-svg" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+            <!-- Gallows (always visible) -->
+            <line x1="20" y1="245" x2="180" y2="245" stroke="#90a4ae" stroke-width="4" stroke-linecap="round"/>
+            <line x1="60" y1="245" x2="60" y2="15"  stroke="#90a4ae" stroke-width="4" stroke-linecap="round"/>
+            <line x1="60" y1="15"  x2="145" y2="15"  stroke="#90a4ae" stroke-width="4" stroke-linecap="round"/>
+            <line x1="145" y1="15" x2="145" y2="48"  stroke="#90a4ae" stroke-width="4" stroke-linecap="round"/>
+            <!-- Body parts (hidden by default) -->
+            <circle id="h-head"      cx="145" cy="68"  r="20"   stroke="#e53935" stroke-width="3" fill="none"    class="body-part"/>
+            <line   id="h-body"      x1="145" y1="88"  x2="145" y2="155" stroke="#e53935" stroke-width="3" stroke-linecap="round" class="body-part"/>
+            <line   id="h-arm-left"  x1="145" y1="110" x2="112" y2="142" stroke="#e53935" stroke-width="3" stroke-linecap="round" class="body-part"/>
+            <line   id="h-arm-right" x1="145" y1="110" x2="178" y2="142" stroke="#e53935" stroke-width="3" stroke-linecap="round" class="body-part"/>
+            <line   id="h-leg-left"  x1="145" y1="155" x2="112" y2="195" stroke="#e53935" stroke-width="3" stroke-linecap="round" class="body-part"/>
+            <line   id="h-leg-right" x1="145" y1="155" x2="178" y2="195" stroke="#e53935" stroke-width="3" stroke-linecap="round" class="body-part"/>
+          </svg>
+
+          <div class="lives-bar">
+            <span class="lives-label">Lives left:</span>
+            <div class="lives-dots" id="lives-dots"></div>
+          </div>
+        </div>
+
+        <!-- Game info panel -->
+        <div class="game-info">
+
+          <div class="badges-row">
+            <span class="badge badge-category" id="badge-category">Category</span>
+          </div>
+
+          <!-- Word blanks -->
+          <div class="word-display" id="word-display" aria-label="Word to guess"></div>
+
+          <!-- Hint -->
+          <div class="hint-box">
+            <div class="hint-title">
+              <svg viewBox="0 0 16 16" width="14" height="14" fill="none">
+                <circle cx="8" cy="8" r="7" stroke="#f57c00" stroke-width="1.5"/>
+                <path d="M8 5v1M8 8v3" stroke="#f57c00" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Hint
+            </div>
+            <p id="hint-text">—</p>
+          </div>
+
+          <!-- Wrong letters -->
+          <div class="wrong-section">
+            <span class="wrong-label">Wrong letters:</span>
+            <div class="wrong-letters" id="wrong-letters" aria-live="polite"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Keyboard -->
+      <div class="keyboard" id="keyboard" role="group" aria-label="Letter buttons"></div>
+
+      <!-- Result overlay -->
+      <div id="result-overlay" class="result-overlay hidden" role="dialog" aria-modal="true">
+        <div class="result-card">
+          <div class="result-icon" id="result-icon"></div>
+          <h2 id="result-title"></h2>
+          <p id="result-msg"></p>
+          <p class="result-word" id="result-word"></p>
+          <button class="btn-play-again" id="btn-play-again">Play Again</button>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
