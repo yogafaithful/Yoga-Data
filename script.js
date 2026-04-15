@@ -7,8 +7,8 @@
 // Each entry has: word, hint, category.
 
 const WORD_BANK = [
-  // Jobs / Roles
-  { word: "BOSS",     hint: "The person in charge of a company or team.",          category: "Jobs" },
+  // ── Jobs / Roles ──────────────────────────────────────
+  { word: "BOSS",     hint: "The person in charge of a company or team.",           category: "Jobs" },
   { word: "STAFF",    hint: "All the workers who work for a company.",              category: "Jobs" },
   { word: "CLERK",    hint: "A person who does office work like typing and filing.", category: "Jobs" },
   { word: "MANAGER",  hint: "A person who is in charge of a team or department.",   category: "Jobs" },
@@ -17,7 +17,7 @@ const WORD_BANK = [
   { word: "TRAINER",  hint: "A person who teaches new skills to employees.",        category: "Jobs" },
   { word: "CASHIER",  hint: "A person who takes payments from customers.",          category: "Jobs" },
 
-  // Office Items
+  // ── Office Items ──────────────────────────────────────
   { word: "DESK",     hint: "A flat table where you do your work in an office.",    category: "Office" },
   { word: "CHAIR",    hint: "A piece of furniture you sit on at your desk.",        category: "Office" },
   { word: "PHONE",    hint: "A device you use to call and talk to other people.",   category: "Office" },
@@ -27,7 +27,7 @@ const WORD_BANK = [
   { word: "STAPLER",  hint: "A tool that joins sheets of paper with metal clips.",  category: "Office" },
   { word: "CABINET",  hint: "A large box with drawers used to store office files.", category: "Office" },
 
-  // Business Terms
+  // ── Business Terms ────────────────────────────────────
   { word: "DEAL",     hint: "An agreement between two people or companies.",        category: "Business" },
   { word: "SALE",     hint: "When a product is sold to a customer.",                category: "Business" },
   { word: "PROFIT",   hint: "Money left after paying all costs and expenses.",      category: "Business" },
@@ -41,7 +41,7 @@ const WORD_BANK = [
   { word: "SERVICE",  hint: "Work done for a customer in exchange for payment.",    category: "Business" },
   { word: "SALARY",   hint: "The fixed amount of money a worker earns each month.", category: "Business" },
 
-  // Actions
+  // ── Actions ───────────────────────────────────────────
   { word: "SELL",     hint: "To give something to someone in exchange for money.",  category: "Actions" },
   { word: "HIRE",     hint: "To give someone a job at your company.",               category: "Actions" },
   { word: "MEET",     hint: "To come together with other people to talk.",          category: "Actions" },
@@ -51,7 +51,7 @@ const WORD_BANK = [
   { word: "ORDER",    hint: "To ask a company to send you goods or services.",      category: "Actions" },
   { word: "DELIVER",  hint: "To bring goods to a customer at their location.",      category: "Actions" },
 
-  // Places
+  // ── Places ────────────────────────────────────────────
   { word: "OFFICE",   hint: "A room or building where people do business work.",    category: "Places" },
   { word: "FACTORY",  hint: "A building where goods are made by machines.",         category: "Places" },
   { word: "STORE",    hint: "A place where customers can go to buy things.",        category: "Places" },
@@ -61,13 +61,85 @@ const WORD_BANK = [
   { word: "HOTEL",    hint: "A building where business travellers stay overnight.", category: "Places" },
   { word: "CANTEEN",  hint: "A room in a workplace where staff eat lunch.",         category: "Places" },
 
-  // Communication
+  // ── Communication ─────────────────────────────────────
   { word: "MEMO",     hint: "A short written note sent between people in a company.", category: "Communication" },
   { word: "MEETING",  hint: "When a group of people gather to discuss work topics.",  category: "Communication" },
   { word: "LETTER",   hint: "A written message sent by post or mail.",               category: "Communication" },
   { word: "SCHEDULE", hint: "A written plan showing when events will happen.",        category: "Communication" },
   { word: "TRAINING", hint: "Learning new skills to become better at your job.",      category: "Communication" },
   { word: "CUSTOMER", hint: "A person who buys goods or services from a business.",  category: "Communication" },
+
+  // ── Trades ────────────────────────────────────────────
+  { word: "PLUMBER",  hint: "A person who installs and repairs water pipes.",        category: "Trades" },
+  { word: "WELDER",   hint: "A person who joins metal parts together using heat.",   category: "Trades" },
+  { word: "BUILDER",  hint: "A person who constructs and repairs buildings.",        category: "Trades" },
+  { word: "DRIVER",   hint: "A person who operates a vehicle as their job.",         category: "Trades" },
+  { word: "PAINTER",  hint: "A person who paints walls and surfaces of buildings.",  category: "Trades" },
+  { word: "MECHANIC", hint: "A person who repairs and maintains engines and vehicles.", category: "Trades" },
+  { word: "COOK",     hint: "A person who prepares food in a cafe or restaurant.",   category: "Trades" },
+  { word: "TAILOR",   hint: "A person who makes and alters clothing.",               category: "Trades" },
+  { word: "DRILL",    hint: "A tool used to make holes in walls or hard surfaces.",  category: "Trades" },
+  { word: "WRENCH",   hint: "A tool used to turn bolts and nuts.",                   category: "Trades" },
+  { word: "SAFETY",   hint: "Rules and actions that keep workers protected at work.", category: "Trades" },
+  { word: "PERMIT",   hint: "An official document that allows you to do a job.",     category: "Trades" },
+
+  // ── Finance ───────────────────────────────────────────
+  { word: "LOAN",     hint: "Money borrowed from a bank that must be paid back.",    category: "Finance" },
+  { word: "TAX",      hint: "Money you must pay to the government from your income.", category: "Finance" },
+  { word: "CASH",     hint: "Physical money in the form of coins and banknotes.",    category: "Finance" },
+  { word: "COST",     hint: "The amount of money needed to buy or make something.",  category: "Finance" },
+  { word: "BONUS",    hint: "Extra money given to an employee as a reward.",         category: "Finance" },
+  { word: "CREDIT",   hint: "Money a bank allows you to use and pay back later.",    category: "Finance" },
+  { word: "SAVINGS",  hint: "Money that you keep and do not spend.",                 category: "Finance" },
+  { word: "EXPENSE",  hint: "Money spent as part of doing your job.",                category: "Finance" },
+  { word: "INTEREST", hint: "Extra money charged by a bank when you borrow money.",  category: "Finance" },
+  { word: "FUND",     hint: "An amount of money saved or collected for a purpose.",  category: "Finance" },
+
+  // ── Retail ────────────────────────────────────────────
+  { word: "PRICE",    hint: "The amount of money you pay to buy something.",         category: "Retail" },
+  { word: "BRAND",    hint: "The name or logo that identifies a company's product.", category: "Retail" },
+  { word: "STOCK",    hint: "The goods a store has available and ready to sell.",    category: "Retail" },
+  { word: "SHELF",    hint: "A flat board in a store where products are displayed.", category: "Retail" },
+  { word: "LABEL",    hint: "A small tag attached to a product with information.",   category: "Retail" },
+  { word: "REFUND",   hint: "Money given back to a customer who returns an item.",   category: "Retail" },
+  { word: "DISCOUNT", hint: "A reduction in the normal price of a product.",         category: "Retail" },
+  { word: "PURCHASE", hint: "Something you buy; the act of buying something.",       category: "Retail" },
+  { word: "SUPPLY",   hint: "The amount of a product available for people to buy.",  category: "Retail" },
+  { word: "RETAIL",   hint: "The selling of goods directly to members of the public.", category: "Retail" },
+
+  // ── Logistics ─────────────────────────────────────────
+  { word: "CARGO",    hint: "Goods carried by a ship, plane, or large vehicle.",    category: "Logistics" },
+  { word: "TRUCK",    hint: "A large vehicle used to transport and deliver goods.",  category: "Logistics" },
+  { word: "SHIP",     hint: "A large vessel that carries goods across the sea.",     category: "Logistics" },
+  { word: "LOAD",     hint: "Goods placed onto a vehicle for transport.",            category: "Logistics" },
+  { word: "ROUTE",    hint: "The path taken to move goods from one place to another.", category: "Logistics" },
+  { word: "CUSTOMS",  hint: "The official office at a border that checks goods.",   category: "Logistics" },
+  { word: "TRANSIT",  hint: "The movement of goods from one place to another.",     category: "Logistics" },
+  { word: "PACKAGE",  hint: "A box or wrapped parcel containing items to be sent.", category: "Logistics" },
+
+  // ── Technology ────────────────────────────────────────
+  { word: "DATA",     hint: "Information stored and processed by a computer.",      category: "Technology" },
+  { word: "WIFI",     hint: "A wireless connection that lets devices use the internet.", category: "Technology" },
+  { word: "SCAN",     hint: "To copy a document using a machine and save it digitally.", category: "Technology" },
+  { word: "SYSTEM",   hint: "A group of programs that controls a computer or device.", category: "Technology" },
+  { word: "WEBSITE",  hint: "A set of pages you can visit on the internet.",        category: "Technology" },
+  { word: "SOFTWARE", hint: "Programs that make a computer do useful tasks.",        category: "Technology" },
+  { word: "DATABASE", hint: "An organized place where large amounts of data is stored.", category: "Technology" },
+  { word: "BACKUP",   hint: "A saved copy of data in case the original is lost.",   category: "Technology" },
+  { word: "NETWORK",  hint: "A group of computers connected to share information.", category: "Technology" },
+  { word: "PASSWORD", hint: "A secret word used to log in to a computer or account.", category: "Technology" },
+
+  // ── Customer Service ──────────────────────────────────
+  { word: "RETURN",   hint: "To bring a product back to the store for a refund.",   category: "Customer Service" },
+  { word: "QUEUE",    hint: "A line of people waiting for their turn to be served.", category: "Customer Service" },
+  { word: "REVIEW",   hint: "A written opinion about a product or service.",        category: "Customer Service" },
+  { word: "SUPPORT",  hint: "Help given to customers who have a problem.",          category: "Customer Service" },
+  { word: "FEEDBACK", hint: "Comments that tell you how good or bad something is.", category: "Customer Service" },
+  { word: "ASSIST",   hint: "To help a customer with a question or problem.",       category: "Customer Service" },
+  { word: "INQUIRY",  hint: "A question asked to get information about a product.", category: "Customer Service" },
+  { word: "POLITE",   hint: "Being kind and respectful when speaking to customers.", category: "Customer Service" },
+  { word: "GREET",    hint: "To welcome a customer when they arrive or contact you.", category: "Customer Service" },
+  { word: "RESOLVE",  hint: "To fix or solve a customer's complaint or problem.",   category: "Customer Service" },
 ];
 
 // ── Constants ─────────────────────────────────────────
